@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retro Pixel Glitch Reveal | 8-Bit Arcade Scroll</title>
+
+  <!-- Google Fonts: 'Press Start 2P' và 'VT323' đậm chất retro pixel arcade -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Lớp phủ CRT Scanline & Vignette giả lập màn hình arcade cổ điển -->
+  <div class="crt-overlay"></div>
+  <div class="scanlines"></div>
+
+  <!-- HUD thông tin Retro Game ở góc màn hình -->
+  <div class="retro-hud">
+    <div class="hud-item"><span class="blink-dot">●</span> 1UP: <span id="hud-score">00000</span></div>
+    <div class="hud-item">LEVEL: <span id="hud-level">01</span></div>
+    <div class="hud-item pixel-accent">PIXEL_DISSOLVE: <span id="hud-status">READY</span></div>
+  </div>
+
+  <!-- Thanh tiến trình cuộn dạng 8-bit Health / Mana Bar -->
+  <div class="retro-progress-container">
+    <span class="bar-label">HP</span>
+    <div class="retro-progress-bar">
+      <div class="retro-progress-fill" id="scroll-progress-fill"></div>
+    </div>
+  </div>
+
+  <!-- Phần Intro đầu trang phong cách Arcade Start Screen -->
+  <section class="intro">
+    <div class="pixel-box">
+      <div class="arcade-badge">INSERT COIN [0/1]</div>
+      <h1 class="glitch-title" data-text="PIXEL QUEST">PIXEL QUEST</h1>
+      <p class="subtitle">RETRO CHROMA DISSOLVE ENGINE</p>
+      <div class="blink-press">▼ CUỘN XUỐNG ĐỂ BẮT ĐẦU CHƠI ▼</div>
+    </div>
+  </section>
+
+  <!-- Phần Spotlight trung tâm chứa các ảnh pixel và lưới dissolve màu sắc rực rỡ -->
+  <section class="spotlight">
+    <!-- Image 1: Cyber City -->
+    <div class="spotlight-image">
+      <img src="https://images.unsplash.com/photo-1508739773434-c26b3d09e071?q=80&w=1600&auto=format&fit=crop"
+        alt="Stage 1 - Neon Cyberpunk City">
+      <div class="stage-tag">STAGE 01: NEO TOKYO</div>
+    </div>
+    <!-- Image 2: Retro Sunset / Synthwave -->
+    <div class="spotlight-image">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1600&auto=format&fit=crop"
+        alt="Stage 2 - Synth Sunset">
+      <div class="stage-tag">STAGE 02: SYNTHWAVE HORIZON</div>
+    </div>
+    <!-- Image 3: Pixel Fantasy / Nature -->
+    <div class="spotlight-image">
+      <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1600&auto=format&fit=crop"
+        alt="Stage 3 - Mystic Valley">
+      <div class="stage-tag">STAGE 03: MYSTIC DUNES</div>
+    </div>
+    <!-- Image 4: Arcade Neon Lights -->
+    <div class="spotlight-image">
+      <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop"
+        alt="Stage 4 - Game Over Arcade">
+      <div class="stage-tag">STAGE 04: ARCADE ZONE</div>
+    </div>
+    <!-- Image 5: Deep Space Matrix -->
+    <div class="spotlight-image">
+      <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1600&auto=format&fit=crop"
+        alt="Stage 5 - Final Galaxy">
+      <div class="stage-tag">STAGE 05: FINAL FRONTIER</div>
+    </div>
+
+    <!-- Khung chứa lưới các khối ô Pixel Dissolve ngập tràn sắc màu -->
+    <div class="dissolve-grid"></div>
+  </section>
+
+  <!-- Phần Outro cuối trang - Game Victory / High Score -->
+  <section class="outro">
+    <div class="pixel-box">
+      <div class="arcade-badge victory-badge">★ MISSION COMPLETE ★</div>
+      <h2 class="glitch-title small" data-text="STAGE CLEAR!">STAGE CLEAR!</h2>
+      <p class="final-score">TOTAL SCORE: 999999 PTS</p>
+      <div class="blink-press">▲ CUỘN LÊN ĐỂ TẢI LẠI TRẬN ĐẤU ▲</div>
+    </div>
+  </section>
+
+  <!-- Thư viện GSAP, ScrollTrigger & Lenis Smooth Scroll -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
